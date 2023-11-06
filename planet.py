@@ -16,16 +16,6 @@ grey = (80, 78, 81)
 brown=(64, 68, 54)
 font = pygame.font.SysFont("comicsanc",20)
 
-# class button():
-#     def __init__(self,surface):
-#         self.surface=surface
-#     def drawButton(self,posx,posy,btnw,btnh,color,radius,shadow=0,scolor='grey'):
-#         if shadow:
-#             pygame.draw.rect(self.surface,scolor,(posx+shadow,posy+shadow,btnw,btnh),border_radius=radius)
-#         self.btn=pygame.draw.rect(self.surface,scolor,(posx+shadow,posy+shadow,btnw,btnh),border_radius=radius)
-#         return self.btn
-#     def textButton(self,btntext,tcolor,font,size,shadow=(0,0),scolor='grey'):
-#         ptext.draw(btntext,center=self.btn.center,color=tcolor,sysfontname=font,fontsize=size,shadow=shadow,scolor=scolor)
 
 class planet:
     AU = 149.6e6 * 1000  # number-actual distence 1000 for convt to meters
@@ -111,10 +101,6 @@ class planet:
         self.y += self.y_vel * self.TIMESTEP
         self.orbit.append((self.x, self.y))
 
-    # def up(self,planets):
-    #     for d in planets:
-    #         d.SCALE+=10
-
 
 def main():
     run = True
@@ -151,28 +137,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-            # mpos=pygame.mouse.get_pos()
-            # if event.type==pygame.MOUSEBUTTONDOWN:
-            #     if pygame.mouse.get_pressed()[0]:
-            #         mClick=True
-            #     if pygame.mouse==pygame.mouse.get_pressed()[0]:
-            #         mClick=False
 
         for p in planets:
             p.update_position(planets)
             p.draw(win)
 
-        # scaleup=button(win)
-        # btnup=scaleup.drawButton(1200,750,70,30,blue,20,5)
-        # scaleup.textButton('scale+','white','Arial',30)
-        #
-        # scaledown=button(win)
-        # btndown=scaledown.drawButton(1300,750,70,30,blue,20,5)
-        # scaledown.textButton('scale-' ,'white','Arial',30)
-        #
-        # if mClick and btnup.collidepoint(mpos):
-        #     for v in planets:
-        #         v.up(planets)
+
 
         pygame.display.update()
     pygame.quit()
