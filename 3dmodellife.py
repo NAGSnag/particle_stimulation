@@ -80,6 +80,7 @@ def main():
 
     while True:
         rate(30)
+         #################################use any one of set of rules
         # rule(green,green, -0.32)
         # rule(green,red, -0.17)
         # rule(green,yellow, 0.34)
