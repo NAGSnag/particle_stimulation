@@ -69,6 +69,7 @@ def main():
             key=pygame.key.get_pressed()
             if key==pygame.K_ESCAPE:
                 run=False
+        ################################     use any one of set of rules
         # rule(red,red,-0.2)
         # rule(red,yellow,-0.1)
         # rule(yellow,red,0.01)
@@ -83,6 +84,8 @@ def main():
         # rule(white,white,0.1)
         # rule(green,white,0.9)
         # rule(green,green,-0.3)\
+       
+        
         rule(red,red,-0.2)
         rule(red,yellow,-0.1)
         rule(yellow,green,-0.1)
